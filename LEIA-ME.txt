@@ -1,0 +1,26 @@
+REFÚGIO AZUL — SITE
+
+Arquivos:
+- index.html
+- style.css
+- script.js
+- pasta assets/
+
+COMO TESTAR:
+1. Extraia o ZIP.
+2. Abra o arquivo index.html no navegador.
+
+COMO PUBLICAR GRÁTIS NO GITHUB PAGES:
+1. Crie uma conta em github.com.
+2. Crie um novo repositório, por exemplo: refugio-azul.
+3. Envie todos os arquivos desta pasta para o repositório.
+4. Vá em Settings > Pages.
+5. Em "Build and deployment", escolha "Deploy from a branch".
+6. Selecione a branch main e a pasta /(root).
+7. Salve. Em alguns minutos o GitHub mostrará o link público.
+
+IMPORTANTE:
+- O WhatsApp já está configurado para (12) 99700-0486.
+- O formulário de datas abre uma mensagem pronta no WhatsApp.
+- As fotos usadas foram recortadas da arte promocional enviada, então estão em baixa resolução.
+- Quando tiver as fotos originais, basta substituir os arquivos dentro da pasta assets mantendo os mesmos nomes.
