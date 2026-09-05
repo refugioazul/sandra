@@ -1,13 +1,16 @@
-// =====================================
-// REFÚGIO AZUL
-// =====================================
+// ==========================================
+// REFÚGIO AZUL - SCRIPT COMPLETO
+// ==========================================
 
 
-// ===== CONSULTAR DISPONIBILIDADE =====
+// ==========================================
+// CONSULTA DE DISPONIBILIDADE
+// ==========================================
 
 const btn = document.getElementById("consultar");
 
 if (btn) {
+
   btn.addEventListener("click", () => {
 
     const checkin = document.getElementById("checkin").value;
@@ -29,26 +32,36 @@ if (btn) {
       encodeURIComponent(texto);
 
     window.open(url, "_blank");
+
   });
+
 }
 
 
 function formatDate(value) {
+
   const [y, m, d] = value.split("-");
+
   return `${d}/${m}/${y}`;
+
 }
 
 
 // Impede check-out anterior ao check-in
 
-const checkinInput = document.getElementById("checkin");
+const checkinInput =
+  document.getElementById("checkin");
 
 if (checkinInput) {
 
   checkinInput.addEventListener("change", (e) => {
 
-    document.getElementById("checkout").min =
-      e.target.value;
+    const checkout =
+      document.getElementById("checkout");
+
+    if (checkout) {
+      checkout.min = e.target.value;
+    }
 
   });
 
@@ -56,9 +69,9 @@ if (checkinInput) {
 
 
 
-// =====================================
-// GALERIAS DAS SUÍTES
-// =====================================
+// ==========================================
+// FOTOS DAS SUÍTES
+// ==========================================
 
 const galeriasSuites = [
 
@@ -91,11 +104,36 @@ const galeriasSuites = [
 
 
 
-// =====================================
-// CRIA A GALERIA AUTOMATICAMENTE
-// =====================================
+// ==========================================
+// ÁREA GOURMET / PISCINA / CHURRASQUEIRA
+// ==========================================
 
-// Remove galeria antiga caso exista
+const galeriasAreas = [
+
+  // ÁREA GOURMET
+  [
+    "assets/gourmet.jpg"
+  ],
+
+  // PISCINA
+  [
+    "assets/pool.jpg"
+  ],
+
+  // CHURRASQUEIRA
+  [
+    "assets/bbq.jpg"
+  ]
+
+];
+
+
+
+// ==========================================
+// CRIA A GALERIA
+// ==========================================
+
+// Remove uma galeria antiga caso exista
 
 const galeriaAntiga =
   document.getElementById("galeriaModal");
@@ -105,9 +143,10 @@ if (galeriaAntiga) {
 }
 
 
-// Cria o fundo da galeria
+// Cria a galeria
 
-const modal = document.createElement("div");
+const modal =
+  document.createElement("div");
 
 modal.id = "galeriaModal";
 
@@ -115,7 +154,7 @@ modal.innerHTML = `
 
   <button
     class="galeria-fechar"
-    aria-label="Fechar galeria">
+    aria-label="Fechar">
     ×
   </button>
 
@@ -128,7 +167,7 @@ modal.innerHTML = `
   <img
     id="fotoGaleria"
     src=""
-    alt="Foto da suíte">
+    alt="Foto ampliada">
 
   <button
     class="galeria-seta galeria-proxima"
@@ -144,132 +183,301 @@ document.body.appendChild(modal);
 
 
 
-// =====================================
-// ESTILO DA GALERIA E ZOOM
-// =====================================
+// ==========================================
+// ESTILOS EXTRAS
+// ==========================================
 
-const estilo = document.createElement("style");
+const estilo =
+  document.createElement("style");
 
 estilo.textContent = `
 
-/* FOTO CRESCE AO PASSAR O MOUSE */
+
+/* ==========================================
+   SUÍTES
+========================================== */
 
 .photo-card {
-  overflow: hidden;
   cursor: pointer;
 }
 
-.photo-card img {
-  transition: transform 0.35s ease;
+
+/* ==========================================
+   ÁREA GOURMET / PISCINA / CHURRASQUEIRA
+========================================== */
+
+.showcase-grid > div {
+
+  cursor: pointer;
+
+  transition:
+    transform 0.30s ease,
+    box-shadow 0.30s ease;
+
 }
 
-.photo-card:hover img {
-  transform: scale(1.08);
+
+/* O CARD INTEIRO AUMENTA */
+
+.showcase-grid > div:hover {
+
+  transform:
+    translateY(-7px)
+    scale(1.035);
+
+  box-shadow:
+    0 16px 35px
+    rgba(0, 0, 0, 0.20);
+
 }
 
 
-/* GALERIA */
+/* FOTO TAMBÉM DÁ UMA LEVE APROXIMADA */
+
+.showcase-grid > div img {
+
+  transition:
+    transform 0.40s ease;
+
+}
+
+
+.showcase-grid > div:hover img {
+
+  transform:
+    scale(1.07);
+
+}
+
+
+
+/* ==========================================
+   GALERIA EM TELA CHEIA
+========================================== */
 
 #galeriaModal {
+
   display: none;
+
   position: fixed;
+
   inset: 0;
+
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.94);
+
+  background:
+    rgba(0, 0, 0, 0.94);
+
   z-index: 999999;
+
   align-items: center;
   justify-content: center;
+
 }
+
 
 #galeriaModal.ativa {
+
   display: flex;
+
 }
+
 
 #fotoGaleria {
+
   max-width: 88%;
-  max-height: 82vh;
+  max-height: 84vh;
+
   object-fit: contain;
-  border-radius: 12px;
-  box-shadow: 0 10px 40px rgba(0,0,0,.5);
-}
-
-.galeria-fechar {
-  position: absolute;
-  top: 15px;
-  right: 25px;
-  border: 0;
-  background: transparent;
-  color: white;
-  font-size: 50px;
-  cursor: pointer;
-  z-index: 1000000;
-}
-
-.galeria-seta {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-
-  border: 0;
-  background: rgba(0,0,0,.55);
-  color: white;
-
-  font-size: 35px;
-
-  padding: 14px 18px;
-
-  cursor: pointer;
 
   border-radius: 10px;
 
-  z-index: 1000000;
+  box-shadow:
+    0 15px 50px
+    rgba(0, 0, 0, 0.5);
+
 }
 
-.galeria-anterior {
-  left: 20px;
-}
 
-.galeria-proxima {
-  right: 20px;
-}
+/* X */
 
-#contadorGaleria {
+.galeria-fechar {
+
   position: absolute;
-  bottom: 22px;
 
-  background: rgba(0,0,0,.55);
+  top: 15px;
+  right: 25px;
 
-  padding: 7px 14px;
+  border: none;
 
-  border-radius: 20px;
+  background: transparent;
 
   color: white;
 
-  font-family: Arial, sans-serif;
+  font-size: 50px;
 
-  font-size: 15px;
+  cursor: pointer;
+
+  z-index: 1000000;
+
+  transition:
+    transform 0.2s ease;
+
 }
 
+
+.galeria-fechar:hover {
+
+  transform:
+    scale(1.15);
+
+}
+
+
+
+/* SETAS */
+
+.galeria-seta {
+
+  position: absolute;
+
+  top: 50%;
+
+  transform:
+    translateY(-50%);
+
+  border: none;
+
+  background:
+    rgba(0, 0, 0, 0.50);
+
+  color: white;
+
+  font-size: 36px;
+
+  padding:
+    14px 18px;
+
+  border-radius: 9px;
+
+  cursor: pointer;
+
+  z-index: 1000000;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+
+}
+
+
+.galeria-seta:hover {
+
+  background:
+    rgba(255, 255, 255, 0.16);
+
+}
+
+
+.galeria-anterior {
+
+  left: 20px;
+
+}
+
+
+.galeria-proxima {
+
+  right: 20px;
+
+}
+
+
+
+/* CONTADOR */
+
+#contadorGaleria {
+
+  position: absolute;
+
+  bottom: 20px;
+
+  padding:
+    7px 15px;
+
+  border-radius: 30px;
+
+  background:
+    rgba(0, 0, 0, 0.55);
+
+  color: white;
+
+  font-family:
+    Arial,
+    sans-serif;
+
+  font-size: 14px;
+
+}
+
+
+
+/* ==========================================
+   CELULAR
+========================================== */
 
 @media (max-width: 700px) {
 
   #fotoGaleria {
+
     max-width: 94%;
     max-height: 80vh;
+
   }
+
 
   .galeria-seta {
+
+    padding:
+      10px 12px;
+
     font-size: 25px;
-    padding: 10px 12px;
+
   }
+
 
   .galeria-anterior {
+
     left: 4px;
+
   }
 
+
   .galeria-proxima {
+
     right: 4px;
+
+  }
+
+
+  .galeria-fechar {
+
+    top: 8px;
+    right: 15px;
+
+    font-size: 45px;
+
+  }
+
+
+  /* No celular não precisa subir tanto */
+
+  .showcase-grid > div:hover {
+
+    transform:
+      scale(1.015);
+
   }
 
 }
@@ -280,24 +488,26 @@ document.head.appendChild(estilo);
 
 
 
-// =====================================
-// FUNCIONAMENTO
-// =====================================
+// ==========================================
+// FUNCIONAMENTO DA GALERIA
+// ==========================================
 
-let suiteAtual = 0;
+let fotosAtuais = [];
 let fotoAtual = 0;
 
 
-function abrirGaleria(numeroSuite) {
+function abrirGaleriaFotos(fotos) {
 
-  suiteAtual = numeroSuite;
+  fotosAtuais = fotos;
+
   fotoAtual = 0;
 
   atualizarGaleria();
 
   modal.classList.add("ativa");
 
-  document.body.style.overflow = "hidden";
+  document.body.style.overflow =
+    "hidden";
 
 }
 
@@ -306,19 +516,27 @@ function fecharGaleria() {
 
   modal.classList.remove("ativa");
 
-  document.body.style.overflow = "";
+  document.body.style.overflow =
+    "";
 
 }
 
 
 function proximaFoto() {
 
-  const fotos = galeriasSuites[suiteAtual];
+  if (fotosAtuais.length <= 1) {
+    return;
+  }
 
   fotoAtual++;
 
-  if (fotoAtual >= fotos.length) {
+  if (
+    fotoAtual >=
+    fotosAtuais.length
+  ) {
+
     fotoAtual = 0;
+
   }
 
   atualizarGaleria();
@@ -328,12 +546,17 @@ function proximaFoto() {
 
 function fotoAnterior() {
 
-  const fotos = galeriasSuites[suiteAtual];
+  if (fotosAtuais.length <= 1) {
+    return;
+  }
 
   fotoAtual--;
 
   if (fotoAtual < 0) {
-    fotoAtual = fotos.length - 1;
+
+    fotoAtual =
+      fotosAtuais.length - 1;
+
   }
 
   atualizarGaleria();
@@ -343,103 +566,240 @@ function fotoAnterior() {
 
 function atualizarGaleria() {
 
-  const fotos =
-    galeriasSuites[suiteAtual];
-
   const imagem =
-    document.getElementById("fotoGaleria");
+    document.getElementById(
+      "fotoGaleria"
+    );
 
   const contador =
-    document.getElementById("contadorGaleria");
+    document.getElementById(
+      "contadorGaleria"
+    );
 
-  imagem.src = fotos[fotoAtual];
+
+  imagem.src =
+    fotosAtuais[fotoAtual];
+
 
   contador.textContent =
-    `${fotoAtual + 1} / ${fotos.length}`;
+    `${fotoAtual + 1} / ${fotosAtuais.length}`;
+
+
+
+  // Se só tiver uma foto,
+  // esconde as setas
+
+  const setaAnterior =
+    document.querySelector(
+      ".galeria-anterior"
+    );
+
+  const setaProxima =
+    document.querySelector(
+      ".galeria-proxima"
+    );
+
+
+  if (fotosAtuais.length <= 1) {
+
+    setaAnterior.style.display =
+      "none";
+
+    setaProxima.style.display =
+      "none";
+
+  } else {
+
+    setaAnterior.style.display =
+      "block";
+
+    setaProxima.style.display =
+      "block";
+
+  }
 
 }
 
 
 
-// =====================================
-// FAZ AS 4 SUÍTES SEREM CLICÁVEIS
-// =====================================
+// ==========================================
+// CLIQUE NAS SUÍTES
+// ==========================================
 
-const cards =
-  document.querySelectorAll(".gallery .photo-card");
+const cardsSuites =
+  document.querySelectorAll(
+    ".gallery .photo-card"
+  );
 
-cards.forEach((card, index) => {
 
-  card.addEventListener("click", () => {
+cardsSuites.forEach(
+  (card, index) => {
 
-    if (galeriasSuites[index]) {
-      abrirGaleria(index);
+    // Isso substitui qualquer onclick antigo
+
+    card.onclick = () => {
+
+      if (
+        galeriasSuites[index]
+      ) {
+
+        abrirGaleriaFotos(
+          galeriasSuites[index]
+        );
+
+      }
+
+    };
+
+  }
+);
+
+
+
+// ==========================================
+// CLIQUE NAS ÁREAS
+// ==========================================
+
+const cardsAreas =
+  document.querySelectorAll(
+    ".showcase-grid > div"
+  );
+
+
+cardsAreas.forEach(
+  (card, index) => {
+
+    card.onclick = () => {
+
+      if (
+        galeriasAreas[index]
+      ) {
+
+        abrirGaleriaFotos(
+          galeriasAreas[index]
+        );
+
+      }
+
+    };
+
+  }
+);
+
+
+
+// ==========================================
+// BOTÕES DA GALERIA
+// ==========================================
+
+document
+  .querySelector(
+    ".galeria-fechar"
+  )
+  .addEventListener(
+    "click",
+    fecharGaleria
+  );
+
+
+document
+  .querySelector(
+    ".galeria-proxima"
+  )
+  .addEventListener(
+    "click",
+    (event) => {
+
+      event.stopPropagation();
+
+      proximaFoto();
+
+    }
+  );
+
+
+document
+  .querySelector(
+    ".galeria-anterior"
+  )
+  .addEventListener(
+    "click",
+    (event) => {
+
+      event.stopPropagation();
+
+      fotoAnterior();
+
+    }
+  );
+
+
+
+// ==========================================
+// CLICAR NO FUNDO PRETO FECHA
+// ==========================================
+
+modal.addEventListener(
+  "click",
+  (event) => {
+
+    if (
+      event.target === modal
+    ) {
+
+      fecharGaleria();
+
     }
 
-  });
-
-});
-
-
-
-// BOTÕES
-
-document
-  .querySelector(".galeria-fechar")
-  .addEventListener("click", fecharGaleria);
-
-
-document
-  .querySelector(".galeria-proxima")
-  .addEventListener("click", (event) => {
-
-    event.stopPropagation();
-    proximaFoto();
-
-  });
-
-
-document
-  .querySelector(".galeria-anterior")
-  .addEventListener("click", (event) => {
-
-    event.stopPropagation();
-    fotoAnterior();
-
-  });
-
-
-
-// CLICAR FORA DA FOTO FECHA
-
-modal.addEventListener("click", (event) => {
-
-  if (event.target === modal) {
-    fecharGaleria();
   }
-
-});
-
+);
 
 
+
+// ==========================================
 // TECLADO
+// ==========================================
 
-document.addEventListener("keydown", (event) => {
+document.addEventListener(
+  "keydown",
+  (event) => {
 
-  if (!modal.classList.contains("ativa")) {
-    return;
+    if (
+      !modal.classList.contains(
+        "ativa"
+      )
+    ) {
+
+      return;
+
+    }
+
+
+    if (
+      event.key === "Escape"
+    ) {
+
+      fecharGaleria();
+
+    }
+
+
+    if (
+      event.key === "ArrowRight"
+    ) {
+
+      proximaFoto();
+
+    }
+
+
+    if (
+      event.key === "ArrowLeft"
+    ) {
+
+      fotoAnterior();
+
+    }
+
   }
-
-  if (event.key === "Escape") {
-    fecharGaleria();
-  }
-
-  if (event.key === "ArrowRight") {
-    proximaFoto();
-  }
-
-  if (event.key === "ArrowLeft") {
-    fotoAnterior();
-  }
-
-});
+);
