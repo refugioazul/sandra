@@ -50,12 +50,27 @@
         <span></span>
       </div>
 
-      <div class="gallery">
-        <article class="photo-card"><img src="assets/suite1.jpg" alt="Suíte 1"><div class="label">Suíte 1</div></article>
-        <article class="photo-card"><img src="assets/suite2.jpg" alt="Suíte 2"><div class="label">Suíte 2</div></article>
-        <article class="photo-card"><img src="assets/suite3.jpg" alt="Suíte 3"><div class="label">Suíte 3</div></article>
-        <article class="photo-card"><img src="assets/suite4.jpg" alt="Suíte 4"><div class="label">Suíte 4</div></article>
-      </div>
+    <div class="gallery">
+  <article class="photo-card" onclick="abrirGaleria(1)">
+    <img src="assets/suite1.jpg" alt="Suíte 1">
+    <div class="label">Suíte 1</div>
+  </article>
+
+  <article class="photo-card" onclick="abrirGaleria(2)">
+    <img src="assets/suite2.jpg" alt="Suíte 2">
+    <div class="label">Suíte 2</div>
+  </article>
+
+  <article class="photo-card" onclick="abrirGaleria(3)">
+    <img src="assets/suite3.jpg" alt="Suíte 3">
+    <div class="label">Suíte 3</div>
+  </article>
+
+  <article class="photo-card" onclick="abrirGaleria(4)">
+    <img src="assets/suite4.jpg" alt="Suíte 4">
+    <div class="label">Suíte 4</div>
+  </article>
+</div>
 
       <div class="feature-row">
         <div><span class="ico">🛏️</span><strong>4 suítes confortáveis</strong></div>
@@ -134,6 +149,20 @@
   </div>
 </footer>
 
-<script src="script.js"></script>
+<div id="galeriaModal" class="galeria-modal">
+
+  <button class="galeria-fechar" onclick="fecharGaleria()">×</button>
+
+  <button class="galeria-seta galeria-anterior" onclick="fotoAnterior()">❮</button>
+
+  <img id="fotoGaleria" src="" alt="Foto da suíte">
+
+  <button class="galeria-seta galeria-proxima" onclick="proximaFoto()">❯</button>
+
+  <div id="contadorGaleria" class="galeria-contador"></div>
+
+</div>
+  
+  <script src="script.js"></script>
 </body>
 </html>
