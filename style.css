@@ -1509,3 +1509,230 @@ footer {
   }
 
 }
+
+/* =========================================
+   CORREÇÃO DA ÁREA DE DISPONIBILIDADE
+========================================= */
+
+
+/* Faz a seção de comodidades ficar em uma coluna só */
+.split {
+  grid-template-columns: 1fr;
+}
+
+
+/* Mantém as comodidades em cima */
+.amenities {
+  width: 100%;
+}
+
+
+/* Disponibilidade ocupa toda a largura */
+.availability-calendar {
+  width: 100%;
+  min-height: auto;
+
+  padding: 70px 20px;
+
+  background: #f5f1e8;
+}
+
+
+/* Conteúdo mais largo */
+.calendar-content {
+  width: min(1100px, 100%);
+
+  margin: 0 auto;
+
+  color: #111;
+}
+
+
+/* TÍTULO PRETO/AZUL ESCURO */
+
+.calendar-content h2 {
+  color: #0b3558;
+
+  text-align: center;
+
+  margin-bottom: 15px;
+}
+
+
+/* TEXTO PRINCIPAL */
+
+.calendar-content .promo {
+  color: #222;
+
+  max-width: 760px;
+
+  margin:
+    0 auto
+    28px;
+
+  text-align: center;
+
+  line-height: 1.6;
+}
+
+
+/* CALENDÁRIO MAIOR */
+
+.calendar-wrapper {
+  width: min(1000px, 100%);
+
+  height: 650px;
+
+  margin:
+    30px auto
+    20px;
+
+  overflow: hidden;
+
+  border-radius: 14px;
+
+  background: white;
+
+  box-shadow:
+    0 12px 35px
+    rgba(0, 0, 0, 0.15);
+}
+
+
+.calendar-wrapper iframe {
+  width: 100%;
+  height: 100%;
+
+  border: 0;
+
+  display: block;
+}
+
+
+/* LEGENDA */
+
+.availability-legend {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 28px;
+
+  margin-bottom: 15px;
+
+  color: #222;
+
+  font-size: 15px;
+  font-weight: 600;
+}
+
+
+/* TEXTO DE AVISO */
+
+.availability-note {
+  max-width: 720px;
+
+  margin:
+    0 auto
+    30px;
+
+  text-align: center;
+
+  color: #444;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+}
+
+
+/* CAMPOS DE DATA */
+
+.calendar-content .date-box {
+  width: min(700px, 100%);
+
+  margin:
+    25px auto
+    20px;
+
+  color: #222;
+}
+
+
+.calendar-content .date-box label {
+  color: #222;
+}
+
+
+/* BOTÃO CENTRALIZADO */
+
+.calendar-content .btn {
+  display: flex;
+
+  width: fit-content;
+
+  margin:
+    0 auto;
+
+  padding:
+    15px 28px;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .calendar-wrapper {
+    height: 600px;
+  }
+
+}
+
+
+/* =========================================
+   CELULAR
+========================================= */
+
+@media (max-width: 700px) {
+
+  .availability-calendar {
+    padding:
+      50px 12px;
+  }
+
+
+  .calendar-content h2 {
+    font-size: 32px;
+  }
+
+
+  .calendar-wrapper {
+    width: 100%;
+
+    height: 560px;
+
+    border-radius: 10px;
+  }
+
+
+  .availability-legend {
+    flex-direction: column;
+
+    gap: 6px;
+  }
+
+
+  .calendar-content .date-box {
+    grid-template-columns: 1fr;
+  }
+
+
+  .calendar-content .btn {
+    width: 100%;
+  }
+
+}
