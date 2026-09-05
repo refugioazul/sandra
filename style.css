@@ -30,3 +30,90 @@ footer{background:#0b2f55;color:#fff;padding:25px 0}.footer-inner{display:flex;j
 .photo-card:hover img {
   transform: scale(1.08);
 }
+
+/* ===== GALERIA EM TELA CHEIA ===== */
+
+.galeria-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.94);
+  z-index: 99999;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.galeria-modal.ativa {
+  display: flex;
+}
+
+.galeria-modal img {
+  max-width: 90%;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.galeria-fechar {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 45px;
+  cursor: pointer;
+  z-index: 100001;
+}
+
+.galeria-seta {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 38px;
+  padding: 14px 18px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.galeria-anterior {
+  left: 20px;
+}
+
+.galeria-proxima {
+  right: 20px;
+}
+
+.galeria-contador {
+  position: absolute;
+  bottom: 20px;
+  color: white;
+  font-size: 16px;
+}
+
+@media (max-width: 700px) {
+
+  .galeria-seta {
+    font-size: 28px;
+    padding: 10px 13px;
+  }
+
+  .galeria-anterior {
+    left: 5px;
+  }
+
+  .galeria-proxima {
+    right: 5px;
+  }
+
+  .galeria-modal img {
+    max-width: 95%;
+  }
+
+}
