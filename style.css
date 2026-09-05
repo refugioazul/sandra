@@ -1352,3 +1352,160 @@ footer {
   }
 
 }
+
+/* =========================================
+   CALENDÁRIO DE DISPONIBILIDADE
+========================================= */
+
+.availability-calendar {
+  min-height: auto;
+
+  padding: 70px 20px;
+
+  background:
+    linear-gradient(
+      rgba(0, 48, 88, 0.94),
+      rgba(0, 48, 88, 0.94)
+    ),
+    url("assets/pool.jpg");
+
+  background-size: cover;
+  background-position: center;
+}
+
+
+.calendar-content {
+  width: min(950px, 100%);
+}
+
+
+.calendar-content h2 {
+  margin-bottom: 15px;
+}
+
+
+.calendar-wrapper {
+  width: 100%;
+
+  height: 650px;
+
+  margin:
+    30px auto
+    18px;
+
+  overflow: hidden;
+
+  border-radius: 14px;
+
+  background: white;
+
+  box-shadow:
+    0 12px 35px
+    rgba(0, 0, 0, 0.28);
+}
+
+
+.calendar-wrapper iframe {
+  width: 100%;
+  height: 100%;
+
+  border: 0;
+
+  display: block;
+}
+
+
+/* LEGENDA */
+
+.availability-legend {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 25px;
+
+  margin-bottom: 15px;
+
+  color: white;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+.availability-note {
+  max-width: 700px;
+
+  margin:
+    0 auto
+    30px;
+
+  text-align: center;
+
+  color:
+    rgba(255, 255, 255, 0.85);
+
+  font-size: 14px;
+}
+
+
+/* CAMPOS */
+
+.calendar-content .date-box {
+  width: min(650px, 100%);
+
+  margin:
+    25px auto
+    20px;
+}
+
+
+.calendar-content .btn {
+  margin-top: 5px;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .calendar-wrapper {
+    height: 600px;
+  }
+
+}
+
+
+/* =========================================
+   CELULAR
+========================================= */
+
+@media (max-width: 700px) {
+
+  .availability-calendar {
+    padding:
+      50px 12px;
+  }
+
+
+  .calendar-wrapper {
+    height: 560px;
+
+    border-radius: 10px;
+  }
+
+
+  .availability-legend {
+    flex-direction: column;
+
+    gap: 6px;
+  }
+
+
+  .calendar-content .date-box {
+    grid-template-columns: 1fr;
+  }
+
+}
