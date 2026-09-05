@@ -2,148 +2,630 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Refúgio Azul | Massaguaçu - Caraguatatuba</title>
-  <meta name="description" content="Casa de temporada em Massaguaçu, Caraguatatuba/SP, com 4 suítes, piscina, churrasqueira, área gourmet e espaço pet friendly.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Refúgio Azul | Massaguaçu - Caraguatatuba
+  </title>
+
+  <meta
+    name="description"
+    content="Casa de temporada em Massaguaçu, Caraguatatuba/SP, com 4 suítes, piscina, churrasqueira, área gourmet e espaço pet friendly."
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
 </head>
+
+
 <body>
 
+
+<!-- =========================================
+     MENU
+========================================= -->
+
 <header class="topbar">
+
   <div class="wrap nav">
-    <a class="brand" href="#inicio">
-      <span class="brand-mark">≈</span>
-      <span>Refúgio Azul</span>
+
+    <a
+      class="brand"
+      href="#inicio"
+    >
+      <span class="brand-mark">
+        ≈
+      </span>
+
+      <span>
+        Refúgio Azul
+      </span>
     </a>
 
+
     <nav class="menu">
-      <a href="#inicio">Início</a>
-      <a href="#acomodacoes">Acomodações</a>
-      <a href="#comodidades">Comodidades</a>
-      <a href="#localizacao">Localização</a>
-      <a href="#tarifas">Tarifas</a>
+
+      <a href="#inicio">
+        Início
+      </a>
+
+      <a href="#acomodacoes">
+        Acomodações
+      </a>
+
+      <a href="#comodidades">
+        Comodidades
+      </a>
+
+      <a href="#tarifas">
+        Disponibilidade
+      </a>
+
+      <a href="#localizacao">
+        Localização
+      </a>
+
     </nav>
 
-    <a class="btn btn-small" href="https://wa.me/5512997000486" target="_blank" rel="noopener">Reservar Agora</a>
+
+    <a
+      class="btn btn-small"
+      href="https://wa.me/5512997000486"
+      target="_blank"
+      rel="noopener"
+    >
+      Reservar Agora
+    </a>
+
   </div>
+
 </header>
 
+
+
 <main>
-  <section id="inicio" class="hero">
-    <img src="assets/hero.jpg" alt="Piscina do Refúgio Azul">
-    <div class="hero-overlay"></div>
-    <div class="wrap hero-content">
-      <h1>Seu Refúgio em Caraguatatuba</h1>
-      <p>Conforto, piscina e espaço para curtir Massaguaçu com quem você gosta.</p>
-      <a class="btn" href="https://wa.me/5512997000486?text=Olá!%20Quero%20consultar%20a%20disponibilidade%20do%20Refúgio%20Azul." target="_blank" rel="noopener">Verificar Disponibilidade</a>
-    </div>
-  </section>
 
-  <section id="acomodacoes" class="section">
-    <div class="wrap">
-      <div class="section-title">
-        <span></span>
-        <h2>A Casa Perfeita para Sua Família</h2>
-        <span></span>
-      </div>
 
-    <div class="gallery">
-  <article class="photo-card" onclick="abrirGaleria(1)">
-    <img src="assets/suite1.jpg" alt="Suíte 1">
-    <div class="label">Suíte 1</div>
-  </article>
+<!-- =========================================
+     HERO
+========================================= -->
 
-  <article class="photo-card" onclick="abrirGaleria(2)">
-    <img src="assets/suite2.jpg" alt="Suíte 2">
-    <div class="label">Suíte 2</div>
-  </article>
+<section
+  id="inicio"
+  class="hero"
+>
 
-  <article class="photo-card" onclick="abrirGaleria(3)">
-    <img src="assets/suite3.jpg" alt="Suíte 3">
-    <div class="label">Suíte 3</div>
-  </article>
+  <img
+    src="assets/hero.jpg"
+    alt="Piscina do Refúgio Azul"
+  >
 
-  <article class="photo-card" onclick="abrirGaleria(4)">
-    <img src="assets/suite4.jpg" alt="Suíte 4">
-    <div class="label">Suíte 4</div>
-  </article>
-</div>
+  <div class="hero-overlay"></div>
 
-      <div class="feature-row">
-        <div><span class="ico">🛏️</span><strong>4 suítes confortáveis</strong></div>
-        <div><span class="ico">🏊</span><strong>Piscina para relaxar</strong></div>
-        <div><span class="ico">🍖</span><strong>Espaço gourmet completo</strong></div>
-      </div>
-    </div>
-  </section>
 
-  <section class="split-section" id="comodidades">
-    <div class="wrap split">
-      <div class="amenities">
-        <div class="mini-title"><span></span><h2>Comodidades</h2><span></span></div>
-        <div class="amenity-grid">
-          <div class="amenity"><div class="amenity-icon">📺</div><span>TV nas suítes</span></div>
-          <div class="amenity"><div class="amenity-icon">💨</div><span>Ventilador de teto</span></div>
-          <div class="amenity"><div class="amenity-icon">🍴</div><span>Cozinha completa</span></div>
-          <div class="amenity"><div class="amenity-icon">🚗</div><span>Até 4 carros</span></div>
-          <div class="amenity"><div class="amenity-icon">🐾</div><span>Pet friendly</span></div>
-          <div class="amenity"><div class="amenity-icon">🌴</div><span>Amplo quintal</span></div>
-        </div>
-      </div>
+  <div class="wrap hero-content">
 
-      <div id="tarifas" class="availability">
-        <img src="assets/pool.jpg" alt="Piscina do Refúgio Azul">
-        <div class="availability-overlay"></div>
-        <div class="availability-content">
-          <h2>Disponibilidade e Tarifas</h2>
-          <p class="promo">Setembro e outubro com valores promocionais aos fins de semana, exceto feriados.</p>
+    <h1>
+      Seu Refúgio em Caraguatatuba
+    </h1>
 
-          <div class="date-box">
-            <label>Data de Check-in
-              <input type="date" id="checkin">
-            </label>
-            <label>Data de Check-out
-              <input type="date" id="checkout">
-            </label>
-          </div>
+    <p>
+      Conforto, piscina e espaço para curtir
+      Massaguaçu com quem você gosta.
+    </p>
 
-          <button class="btn" id="consultar">Consultar Disponibilidade</button>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <section class="showcase">
-    <div class="wrap showcase-grid">
-      <div><img src="assets/gourmet.jpg" alt="Área gourmet"><span>Área Gourmet</span></div>
-      <div><img src="assets/pool.jpg" alt="Piscina"><span>Piscina</span></div>
-      <div><img src="assets/bbq.jpg" alt="Churrasqueira"><span>Churrasqueira</span></div>
-    </div>
-  </section>
+    <a
+      class="btn"
+      href="#tarifas"
+    >
+      Verificar Disponibilidade
+    </a>
 
-<section id="localizacao" class="location">
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     ACOMODAÇÕES
+========================================= -->
+
+<section
+  id="acomodacoes"
+  class="section"
+>
 
   <div class="wrap">
 
-    <div class="location-header">
+
+    <div class="section-title">
+
+      <span></span>
+
+      <h2>
+        A Casa Perfeita para Sua Família
+      </h2>
+
+      <span></span>
+
+    </div>
+
+
+
+    <div class="gallery">
+
+
+      <article class="photo-card">
+
+        <img
+          src="assets/suite1.jpg"
+          alt="Suíte 1"
+        >
+
+        <div class="label">
+          Suíte 1
+        </div>
+
+      </article>
+
+
+
+      <article class="photo-card">
+
+        <img
+          src="assets/suite2.jpg"
+          alt="Suíte 2"
+        >
+
+        <div class="label">
+          Suíte 2
+        </div>
+
+      </article>
+
+
+
+      <article class="photo-card">
+
+        <img
+          src="assets/suite3.jpg"
+          alt="Suíte 3"
+        >
+
+        <div class="label">
+          Suíte 3
+        </div>
+
+      </article>
+
+
+
+      <article class="photo-card">
+
+        <img
+          src="assets/suite4.jpg"
+          alt="Suíte 4"
+        >
+
+        <div class="label">
+          Suíte 4
+        </div>
+
+      </article>
+
+
+    </div>
+
+
+
+    <div class="feature-row">
 
       <div>
-        <span class="eyebrow">LOCALIZAÇÃO</span>
+        <span class="ico">
+          🛏️
+        </span>
+
+        <strong>
+          4 suítes confortáveis
+        </strong>
+      </div>
+
+
+      <div>
+        <span class="ico">
+          🏊
+        </span>
+
+        <strong>
+          Piscina para relaxar
+        </strong>
+      </div>
+
+
+      <div>
+        <span class="ico">
+          🍖
+        </span>
+
+        <strong>
+          Espaço gourmet completo
+        </strong>
+      </div>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     COMODIDADES
+========================================= -->
+
+<section
+  class="split-section"
+  id="comodidades"
+>
+
+  <div class="wrap split">
+
+
+    <div class="amenities">
+
+
+      <div class="mini-title">
+
+        <span></span>
+
+        <h2>
+          Comodidades
+        </h2>
+
+        <span></span>
+
+      </div>
+
+
+
+      <div class="amenity-grid">
+
+
+        <div class="amenity">
+
+          <div class="amenity-icon">
+            📺
+          </div>
+
+          <span>
+            TV nas suítes
+          </span>
+
+        </div>
+
+
+
+        <div class="amenity">
+
+          <div class="amenity-icon">
+            💨
+          </div>
+
+          <span>
+            Ventilador de teto
+          </span>
+
+        </div>
+
+
+
+        <div class="amenity">
+
+          <div class="amenity-icon">
+            🍴
+          </div>
+
+          <span>
+            Cozinha completa
+          </span>
+
+        </div>
+
+
+
+        <div class="amenity">
+
+          <div class="amenity-icon">
+            🚗
+          </div>
+
+          <span>
+            Até 4 carros
+          </span>
+
+        </div>
+
+
+
+        <div class="amenity">
+
+          <div class="amenity-icon">
+            🐾
+          </div>
+
+          <span>
+            Pet friendly
+          </span>
+
+        </div>
+
+
+
+        <div class="amenity">
+
+          <div class="amenity-icon">
+            🌴
+          </div>
+
+          <span>
+            Amplo quintal
+          </span>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+
+
+<!-- =========================================
+     DISPONIBILIDADE + CALENDÁRIO
+========================================= -->
+
+    <div
+      id="tarifas"
+      class="availability availability-calendar"
+    >
+
+
+      <div class="availability-content calendar-content">
+
+
+        <h2>
+          Disponibilidade e Tarifas
+        </h2>
+
+
+        <p class="promo">
+
+          Consulte as datas no calendário abaixo.
+
+          As datas marcadas como indisponíveis
+          correspondem a reservas confirmadas.
+
+        </p>
+
+
+
+        <div class="calendar-wrapper">
+
+          <iframe
+            src="https://calendar.google.com/calendar/embed?height=650&wkst=1&ctz=America%2FSao_Paulo&showPrint=0&showCalendars=0&src=MTZlN2U2NWQzYWI4NjBmMjBhMzc0Y2EyOWNmMTBhZjBmYzY1YzFmNzUyZDQ5NmQ5Mzg1ODVmNGQ0OTg2OWM4Y0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%233f51b5"
+            frameborder="0"
+            scrolling="no"
+            loading="lazy"
+            title="Calendário de disponibilidade do Refúgio Azul"
+          >
+          </iframe>
+
+        </div>
+
+
+
+        <div class="availability-legend">
+
+          <span>
+            🔴 Indisponível
+          </span>
+
+          <span>
+            ⚪ Disponível
+          </span>
+
+        </div>
+
+
+
+        <p class="availability-note">
+
+          A disponibilidade exibida é informativa.
+
+          A reserva só é confirmada após
+          contato com a responsável.
+
+        </p>
+
+
+
+        <div class="date-box">
+
+
+          <label>
+
+            Data de Check-in
+
+            <input
+              type="date"
+              id="checkin"
+            >
+
+          </label>
+
+
+
+          <label>
+
+            Data de Check-out
+
+            <input
+              type="date"
+              id="checkout"
+            >
+
+          </label>
+
+
+        </div>
+
+
+
+        <button
+          class="btn"
+          id="consultar"
+        >
+          Consultar Disponibilidade
+        </button>
+
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     ÁREA GOURMET / PISCINA / CHURRASQUEIRA
+========================================= -->
+
+<section class="showcase">
+
+  <div class="wrap showcase-grid">
+
+
+    <div>
+
+      <img
+        src="assets/gourmet.jpg"
+        alt="Área gourmet"
+      >
+
+      <span>
+        Área Gourmet
+      </span>
+
+    </div>
+
+
+
+    <div>
+
+      <img
+        src="assets/pool.jpg"
+        alt="Piscina"
+      >
+
+      <span>
+        Piscina
+      </span>
+
+    </div>
+
+
+
+    <div>
+
+      <img
+        src="assets/bbq.jpg"
+        alt="Churrasqueira"
+      >
+
+      <span>
+        Churrasqueira
+      </span>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     LOCALIZAÇÃO
+========================================= -->
+
+<section
+  id="localizacao"
+  class="location"
+>
+
+  <div class="wrap">
+
+
+    <div class="location-header">
+
+
+      <div>
+
+        <span class="eyebrow">
+          LOCALIZAÇÃO
+        </span>
+
 
         <h2>
           Massaguaçu • Caraguatatuba/SP
         </h2>
 
+
         <p>
+
           Próximo à Praia de Massaguaçu.
-          Clique no mapa para abrir a localização no Google Maps.
+
+          Clique no mapa para abrir a
+          localização no Google Maps.
+
         </p>
+
       </div>
 
+
     </div>
+
 
 
     <a
@@ -154,34 +636,52 @@
       aria-label="Abrir Praia de Massaguaçu no Google Maps"
     >
 
+
       <iframe
         src="https://www.google.com/maps?q=Praia%20de%20Massagua%C3%A7u%2C%20Caraguatatuba%20SP&output=embed"
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
         title="Mapa da Praia de Massaguaçu"
-      ></iframe>
+      >
+      </iframe>
+
+
 
       <div class="map-bottom">
+
 
         <div class="map-pin">
           📍
         </div>
 
+
         <div>
-          <strong>Praia de Massaguaçu</strong>
-          <span>Abrir no Google Maps</span>
+
+          <strong>
+            Praia de Massaguaçu
+          </strong>
+
+          <span>
+            Abrir no Google Maps
+          </span>
+
         </div>
+
 
         <div class="map-arrow">
           ↗
         </div>
 
+
       </div>
+
 
     </a>
 
 
+
     <div class="location-buttons">
+
 
       <a
         class="btn"
@@ -192,6 +692,8 @@
         📍 Abrir no Google Maps
       </a>
 
+
+
       <a
         class="btn location-whatsapp"
         href="https://wa.me/5512997000486?text=Olá!%20Quero%20saber%20mais%20sobre%20a%20localização%20do%20Refúgio%20Azul."
@@ -201,39 +703,114 @@
         Falar pelo WhatsApp
       </a>
 
+
     </div>
+
 
   </div>
 
 </section>
 
+
+
+</main>
+
+
+
+<!-- =========================================
+     RODAPÉ
+========================================= -->
+
 <footer>
+
+
   <div class="wrap footer-inner">
+
+
     <div>
-      <strong>Refúgio Azul</strong>
-      <span>Massaguaçu • Caraguatatuba/SP</span>
+
+      <strong>
+        Refúgio Azul
+      </strong>
+
+      <span>
+        Massaguaçu • Caraguatatuba/SP
+      </span>
+
     </div>
+
+
+
     <div>
-      <span>Reservas</span>
-      <a href="tel:+5512997000486">(12) 99700-0486</a>
+
+      <span>
+        Reservas
+      </span>
+
+      <a href="tel:+5512997000486">
+        (12) 99700-0486
+      </a>
+
     </div>
+
+
   </div>
+
+
 </footer>
 
-<div id="galeriaModal" class="galeria-modal">
 
-  <button class="galeria-fechar" onclick="fecharGaleria()">×</button>
 
-  <button class="galeria-seta galeria-anterior" onclick="fotoAnterior()">❮</button>
+<!-- =========================================
+     GALERIA EM TELA CHEIA
+========================================= -->
 
-  <img id="fotoGaleria" src="" alt="Foto da suíte">
+<div
+  id="galeriaModal"
+  class="galeria-modal"
+>
 
-  <button class="galeria-seta galeria-proxima" onclick="proximaFoto()">❯</button>
 
-  <div id="contadorGaleria" class="galeria-contador"></div>
+  <button
+    class="galeria-fechar"
+    aria-label="Fechar galeria"
+  >
+    ×
+  </button>
+
+
+  <button
+    class="galeria-seta galeria-anterior"
+    aria-label="Foto anterior"
+  >
+    ❮
+  </button>
+
+
+  <img
+    id="fotoGaleria"
+    src=""
+    alt="Foto ampliada"
+  >
+
+
+  <button
+    class="galeria-seta galeria-proxima"
+    aria-label="Próxima foto"
+  >
+    ❯
+  </button>
+
+
+  <div id="contadorGaleria"></div>
+
 
 </div>
-  
-  <script src="script.js"></script>
+
+
+
+<script src="script.js"></script>
+
+
 </body>
 </html>
